@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Category{% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row flex justify-content-between">
+        <div class="img2 col-lg-5 mt-5">
+            <img src="{{product.product_image.url}}" class="image img-fluid" style="max-height: 300px;" alt="">
+        </div>
+        <div class="productdetail col-lg-5">
+            <h1 style="font-family: Georgia; font-size: 20px;">{{product.title}}</h1>
+            <h5>Rs.{{product.discounted_price}}/-</h5>
+            <small class="text-decoration-line-through text-danger fs-5"><del>Rs. {{product.selling_price}}/-</del></small>
+            <br><br>
+            <h4>Product Features</h4>
+            <ul class="fs-5" style="font-family: Rajdhani; font-size: 8px;">
+                <li>{{product.composition}}</li>
+            </ul>
+            <div class="buttons row flex" style="font-family: Rajdhani;">
+                <button type="submit" class="d-grid gap-2 btn1 btn btn-warning p-1 m-1 btn-xs text-decoration-none text-white">Add to Cart</button>
+                <div class="btn btn-dark p-1 m-1 btn-xs"><a href="#" class="text-decoration-none text-white">Buy Now</a></div>
+            </div>        
+      
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
